@@ -4,7 +4,7 @@ const proxy = require('http-proxy-middleware')
 const app = express()
 
 const config = {
-    target: 'https://test.ipdb.io',
+    target: process.env.IPDB_TARGET || 'https://test.ipdb.io',
     changeOrigin: true,
     headers: {
         app_id: process.env.IPDB_APP_ID,
