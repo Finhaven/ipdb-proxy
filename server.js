@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const proxy = require('http-proxy-middleware')
 
 const app = express()
@@ -12,5 +13,6 @@ const config = {
     }
 }
 
+app.use(cors())
 app.use('*', proxy(config))
 app.listen(process.env.IPDB_PORT || 9984)
