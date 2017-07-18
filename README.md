@@ -1,5 +1,7 @@
 # ipdb-proxy
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/bigchaindb/ipdb-proxy.svg)](https://greenkeeper.io/)
+
 Simple proxy that stores `app_id` and `app_key` for IPDB.
 
 # Usage
