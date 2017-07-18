@@ -12,5 +12,11 @@
     "cors": "^2.8.3",
     "express": "^4.15.3",
     "http-proxy-middleware": "^0.17.4"
+  },
+  "now": {
+    "alias": "ipdb-proxy.now.sh",
+    "env": {
+      "NODE_ENV": "production"
+    }
   }
 }
