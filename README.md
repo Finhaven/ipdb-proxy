@@ -1,8 +1,6 @@
 # ipdb-proxy
 
-[![Build Status](https://travis-ci.org/bigchaindb/ipdb-proxy.svg?branch=master)](https://travis-ci.org/bigchaindb/ipdb-proxy) [![Greenkeeper badge](https://badges.greenkeeper.io/bigchaindb/ipdb-proxy.svg)](https://greenkeeper.io/)
-
-Simple proxy that stores `app_id` and `app_key` for IPDB.
+Simple proxy to check `app_id` and `app_key` on a private instance of bigchainDB.
 
 # Usage
 
@@ -21,10 +19,10 @@ docker run -e IPDB_APP_ID=<app_id> -e IPDB_APP_KEY=<app_key> -p 9984:9984 bigcha
 
 ## Env variables
 
-- `IPDB_TARGET`: URL to connect to (default `https://test.ipdb.io`).
+- `IPDB_TARGET`: URL to connect to (default `http://localhost:5984`).
 - `IPDB_PORT`: Port to use when creating the server (default `9984`).
-- `IPDB_APP_ID`: the `app_id` to add to the headers of every request.
-- `IPDB_APP_KEY`: the (secret) `app_key` to add to the headers of every request.
+- `IPDB_APP_ID`: the `app_id` to check in the headers of every request.
+- `IPDB_APP_KEY`: the (secret) `app_key` to check in the headers of every request.
 
 # Deployment
 
