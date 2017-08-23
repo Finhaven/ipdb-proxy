@@ -14,7 +14,14 @@ the env variable `IPDB_PORT`.
 ## Running with Docker
 
 ```
-docker run -e IPDB_APP_ID=<app_id> -e IPDB_APP_KEY=<app_key> -p 9984:9984 bigchaindb/ipdb-proxy
+git clone https://github.com/FrontierFoundry/ipdb-proxy
+docker build -t ipdb-proxy ipdb-proxy
+docker run -d -p 9984:9984 --env-file .env ipdb-proxy
+```
+the above presumes env vars are set in a file `.env` that sets vars as so
+```
+IPDB_APP_ID=123
+IPDB_APP_KEY=123456
 ```
 
 ## Env variables
@@ -24,17 +31,3 @@ docker run -e IPDB_APP_ID=<app_id> -e IPDB_APP_KEY=<app_key> -p 9984:9984 bigcha
 - `IPDB_APP_ID`: the `app_id` to check in the headers of every request.
 - `IPDB_APP_KEY`: the (secret) `app_key` to check in the headers of every request.
 
-# Deployment
-
-Deploy to now, make sure to switch to BigchainDB org before deploying:
-
-```bash
-# first run
-now login
-now switch
-
-# deploy
-now
-# switch alias to new deployment
-now alias
-```
